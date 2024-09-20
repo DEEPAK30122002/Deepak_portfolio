@@ -6,10 +6,11 @@ function sendEmail(event) {
     user_name: document.getElementById("name").value,
     user_email: document.getElementById("email").value,
     message: document.getElementById("form-message").value,
+    reply_to: document.getElementById("email").value,
   };
 
   // Use EmailJS to send the email
-  emailjs.send("deepak_3012", "template_zpvvuzi", templateParams).then(
+  emailjs.send("service_x8m2del", "template_bxtesx3", templateParams).then(
     function (response) {
       alert("Email sent successfully!");
       console.log("SUCCESS!", response.status, response.text);
