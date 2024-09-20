@@ -2,11 +2,21 @@ function sendEmail(event) {
   event.preventDefault(); // Prevent the default form submission
 
   // Collect form data
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("form-message").value;
+
+  // Simple validation
+  if (!name || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
   const templateParams = {
-    user_name: document.getElementById("name").value,
-    user_email: document.getElementById("email").value,
-    message: document.getElementById("form-message").value,
-    reply_to: document.getElementById("email").value,
+    user_name: name,
+    user_email: email,
+    message: message,
+    reply_to: email,
   };
 
   // Use EmailJS to send the email
